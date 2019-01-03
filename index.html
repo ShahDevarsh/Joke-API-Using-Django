@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <style>
+     body{
+     margin:100px auto;
+     background:linear-gradient(90deg,#CCFFFF,#FFCCCC);
+  	 text-align:center;
+  	 font-family:cursive;
+  }
+  #main{
+    width:100%;
+    height:100%;
+    border:1.5px solid black;
+    }
+.row{
+ width:100%;
+ height:50px;
+ display:flex;
+ flex-direction: row;
+ }
+.label{
+ text-align:right;
+ padding:10px;
+ padding-right: 15px;
+ vertical-align:middle;
+ width:45%;
+ height:auto;
+  }
+.input_tab{
+  text-align:left;
+  padding:10px;
+  padding-left: 15px;
+  width:45%;
+  height:auto;
+  float:right;
+  margin-left: 15px;
+  }
+
+  .tab{
+      min-width: 100px;
+      width:250px;
+      padding:5px 5px 5px 5px;
+       }
+   .submit{
+        	 background-color: #59ace0;
+        	 border-radius:4px;
+        	 color:white;
+        	 font-size:1em;
+             height:40px;
+             width:200px;
+             margin-left:190px;
+             border:0px solid;
+             position:relative;
+        }
+</style>
+</head>
+<body>
+ <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+
+        <div class="row">
+            <div class="label">
+                <label>First Name :</label>
+            </div>
+            <div class="input_tab">
+                <input name='firstname' class="tab" type="text" placeholder="Enter your first name" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="label">
+                <label>Last Name :</label>
+            </div>
+            <div class="input_tab">
+                <input name='lastname' class="tab" type="text" placeholder="Enter your Last name" required>
+            </div>
+        </div>
+                <button type="submit" class="submit">Click Here To Get Amazing stuff</button>
+    </form>
+         <p>
+        {{ joke }}
+    </p>
+</body>
+</html>
